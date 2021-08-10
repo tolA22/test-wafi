@@ -28,3 +28,4 @@ debug.log
 firebase.config.json
 
 package-lock.json
+node_modules
