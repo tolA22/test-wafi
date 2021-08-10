@@ -1,0 +1,28 @@
+{
+  "name": "wafi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --runInBand --detectOpenHandles"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mongodb": "^3.6.11",
+    "mongodb-memory-server-core": "^7.3.6",
+    "mongoose": "^5.13.6"
+  },
+  "devDependencies": {
+    "jest": "^27.0.6",
+    "mongodb-memory-server": "^7.3.6"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "config": {
+    "mongodbMemoryServer": {
+      "version": "4.2.3"
+    }
+  }
+}
