@@ -1,5 +1,10 @@
 const userModel = require('../models/user');
 
+/**
+ * 
+ * @param {*} user the user model to be created
+ * @returns the newly created user model or throws error
+ */
 module.exports.create = async (user) => {
     if (!user)
         throw new Error('Missing user');
@@ -11,7 +16,12 @@ module.exports.create = async (user) => {
     }
 }
 
-
+/**
+ * 
+ * @param {*} accountNumber the account number of the account to be deposited
+ * @param {*} amount the amount to be added to the account
+ * @returns the user model or throws error
+ */
 module.exports.deposit = async (accountNumber, amount) => {
     const query = { accountNumber }
 
@@ -28,6 +38,12 @@ module.exports.deposit = async (accountNumber, amount) => {
     }
 }
 
+/**
+ * 
+ * @param {*} accountNumber the account number of the account to withdraw from
+ * @param {*} amount the amount to be withdrawn
+ * @returns returns the user model or throws error
+ */
 module.exports.withdraw = async (accountNumber, amount) => {
     const query = { accountNumber }
 
@@ -48,6 +64,13 @@ module.exports.withdraw = async (accountNumber, amount) => {
     }
 }
 
+/**
+ * 
+ * @param {*} accountNumber1 the account number to be transferred from
+ * @param {*} accountNumber2 the account number to transfer to
+ * @param {*} amount the amount to be transferred
+ * @returns  the user model or throws error
+ */
 module.exports.transfer = async (accountNumber1, accountNumber2, amount) => {
     try {
         const withdraw = await this.withdraw(accountNumber1, amount);
@@ -58,7 +81,11 @@ module.exports.transfer = async (accountNumber1, accountNumber2, amount) => {
     }
 
 }
-
+/**
+ * 
+ * @param {*} accountNumber the account number to be checked
+ * @returns the user model or throws error
+ */
 module.exports.check = async (accountNumber) => {
     const query = { accountNumber }
     try {
