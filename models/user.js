@@ -5,7 +5,8 @@ const userSchema = new mongoose.Schema({
     lastName: { type: String, required: true },
     email: { type: String, required: true, unique: true },
     balance: { type: Number, required: false, default: 0 },
-    accountNumber: { type: Number, required: true, unique: true }
+    accountNumber: { type: Number, required: true, unique: true },
+    currency: {type:String, required:true, default:'USD'}
 });
 
 module.exports = mongoose.model('user', userSchema)
